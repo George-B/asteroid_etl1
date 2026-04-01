@@ -33,19 +33,19 @@ def load_data(data):
 
                 # 👇 IMPORTANT: check if row was actually inserted
                 if cur.rowcount == 1:
-                    print("✅ INSERTED:", row["id"])
+                    print("INSERTED:", row["id"])
                     inserted_count += 1
                 else:
-                    print("⚠️ SKIPPED (duplicate):", row["id"])
+                    print("SKIPPED (duplicate):", row["id"])
 
             except Exception as e:
-                print("❌ INSERT ERROR:", e)
+                print("INSERT ERROR:", e)
                 logger.error(f"Insert failed: {e}")
 
         print("COMMITTING...")
         conn.commit()
 
-        print(f"✅ TOTAL INSERTED: {inserted_count}")
+        print(f"TOTAL INSERTED: {inserted_count}")
 
         cur.close()
         conn.close()
@@ -53,5 +53,5 @@ def load_data(data):
         logger.info("Data loaded successfully")
 
     except Exception as e:
-        print("❌ DB CONNECTION ERROR:", e)
+        print("DB CONNECTION ERROR:", e)
         logger.error(f"Database connection failed: {e}")

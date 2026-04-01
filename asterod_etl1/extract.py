@@ -9,7 +9,7 @@ def fetch_asteroids(start_date, end_date):
             params={
                 "start_date": start_date,
                 "end_date": end_date,
-                "api_key": API_KEY   # ✅ using your real key
+                "api_key": API_KEY
             }
         )
 

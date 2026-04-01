@@ -7,7 +7,7 @@ print("DB CONFIG:", DB_CONFIG)
 
 def run_pipeline():
     start_date = datetime.today()
-    end_date = start_date + timedelta(days=3)  # 👈 fetch multiple days
+    end_date = start_date + timedelta(days=3)
 
     start_str = start_date.strftime("%Y-%m-%d")
     end_str = end_date.strftime("%Y-%m-%d")
@@ -18,15 +18,15 @@ def run_pipeline():
     if raw_data:
         transformed = transform_data(raw_data)
         print("TRANSFORMED COUNT:", len(transformed))
-        print("TRANSFORMED SAMPLE:", transformed[:2])  # 👈 preview
+        print("TRANSFORMED SAMPLE:", transformed[:2])
 
         if transformed:
             print("LOADING DATA...")
             load_data(transformed)
         else:
-            print("⚠️ No transformed data (check transform.py)")
+            print("No transformed data (check transform.py)")
     else:
-        print("❌ No raw data from API")
+        print("No raw data from API")
 
 if __name__ == "__main__":
     run_pipeline()
