@@ -2,8 +2,8 @@ from extract import fetch_asteroids
 from transform import transform_data
 from load import load_data
 from datetime import datetime, timedelta
-from config import DB_CONFIG
-print("DB CONFIG:", DB_CONFIG)
+from config import API_KEY
+
 
 def run_pipeline():
     start_date = datetime.today()

@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = "oEw46GFSLpZeDkAgVLInoGmuWOWeZC3bO4wixYVB"
+API_KEY = os.getenv("API_KEY")
 
 DB_CONFIG = {
     "dbname": os.getenv("DB_NAME", "nasa"),
